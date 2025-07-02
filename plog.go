@@ -1,6 +1,7 @@
 package plog
 
 import (
+	"fmt"
 	"log/slog"
 	"os"
 	"runtime"
@@ -39,6 +40,10 @@ func LogError(err error) {
 		slog.String("function", funcName),
 		slog.Int("line", line),
 	)
+}
+
+func Println(a ...any) (n int, err error){
+	return fmt.Println(a...)
 }
 
 func PrintSlice(arr []string) {
